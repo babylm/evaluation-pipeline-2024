@@ -289,7 +289,7 @@ class HFLM(TemplateLM):
             if image_src_split:
                 self.image_src_split = image_src_split
             else:
-                self.image_src_split = "test"
+                self.image_src_split = "test" if image_src == "facebook/winoground" else "validation"
             self.image_src = load_dataset(image_src)[self.image_src_split]
 
         self.truncation = truncation
